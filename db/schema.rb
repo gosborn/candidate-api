@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_161519) do
+ActiveRecord::Schema.define(version: 2018_06_06_191400) do
 
   create_table "candidates", force: :cascade do |t|
     t.string "name"
     t.integer "years_exp"
     t.string "status"
     t.datetime "date_applied"
-    t.boolean "reviewed"
+    t.boolean "reviewed", default: false
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
