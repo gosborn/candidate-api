@@ -12,7 +12,12 @@ class CandidatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create candidate" do
     assert_difference('Candidate.count') do
-      post candidates_url, params: { candidate: {  } }, as: :json
+      post candidates_url, params: {candidate: {name: 'test test',
+                                                years_exp: 15,
+                                                status: 'pending',
+                                                date_applied: '2018-05-05 11:55:42',
+                                                reviewed: false,
+                                                description: ''}}, as: :json
     end
 
     assert_response 201
@@ -24,7 +29,10 @@ class CandidatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update candidate" do
-    patch candidate_url(@candidate), params: { candidate: {  } }, as: :json
+    patch candidate_url(@candidate), params: {candidate: {
+        name: 'test test2',
+        status: 'accepted'
+    }}, as: :json
     assert_response 200
   end
 
