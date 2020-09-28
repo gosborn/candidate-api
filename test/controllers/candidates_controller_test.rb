@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# TODO: update with failing create/update spec
 class CandidatesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @candidate = candidates(:one)
